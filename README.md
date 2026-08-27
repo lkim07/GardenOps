@@ -1,2 +1,2 @@
 # GardenOps
-Collaborative Family Plant Management Platform
+Collaborative Family Garden Management Platform
