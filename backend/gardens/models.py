@@ -8,7 +8,18 @@ class Garden(models.Model):
     def __str__(self):
         return self.name
 
+# create vertual environment
+# python -m venv .venv
+
+# enter to venv
 # .\.venv\Scripts\Activate.ps1
+
+# Django REST Framework(DRF)
+# backend will expose REST APIs to React.
+# pip install djangorestframework
+
+# cd backend, then Create the Django project
+# django-admin startproject config .
 
 # Python model
 #      ↓
