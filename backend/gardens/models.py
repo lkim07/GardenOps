@@ -71,3 +71,96 @@ class Garden(models.Model):
 #        │
 #        └── gardens
 #              └── garden-related functionality
+
+
+# Python interactive shell >>> can type Python directly here.
+# python manage.py shell
+
+# Give me all Garden objects in the database.
+# Garden.objects.all()
+# garden = Garden.objects.first()
+# garden.name
+
+
+# SQL INSERT
+# garden2 = Garden.objects.create(
+#     name="Balcony Garden",
+#     description="A small garden for herbs and tomatoes."
+# )
+# garden2
+# Garden.objects.all()
+
+# Count
+# Garden.objects.count()
+
+# find 
+# garden = Garden.objects.get(name="Backyard Garden")
+# garden.description
+
+# Filtering
+# Garden.objects.filter(name="Backyard Garden")
+# => get() returns one object, filter() returns a QuerySet
+
+
+# Modify
+# Without save(), you changed the Python object in memory, but you haven't necessarily persisted the change to the database.
+# garden = Garden.objects.get(name="Backyard Garden")
+# garden.description = "A family garden for vegetables, herbs, and flowers."
+# garden.save()
+
+# Delete
+# garden2.delete()
+
+
+## Five ORM
+
+# CREATE
+# Garden.objects.create(...)
+
+# READ
+# Garden.objects.all()
+# Garden.objects.get(...)
+# Garden.objects.filter(...)
+
+# UPDATE
+# garden.save()
+
+# DELETE
+# garden.delete()
+
+# CRUD
+# | Operation | Meaning       |
+# | --------- | ------------- |
+# | Create    | Create data   |
+# | Read      | Retrieve data |
+# | Update    | Change data   |
+# | Delete    | Remove data   |
+
+
+# inspect the SQL
+# Garden.objects.filter(name="Backyard Garden").query
+
+# SELECT ...
+# FROM "gardens_garden"
+# WHERE "gardens_garden"."name" = Backyard Garden
+
+# Python
+# Garden.objects.filter(...)
+#         ↓
+# Django ORM
+#         ↓
+# SQL
+#         ↓
+# Database
+
+# Exit the Django shell
+# exit()
+
+# For this project, I'm using
+# Django
+# +
+# ORM
+# +
+# PostgreSQL
+# +
+# Docker
