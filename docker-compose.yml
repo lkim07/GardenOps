@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:16
+    container_name: garden-postgres
+    environment:
+      POSTGRES_DB: garden_db
+      POSTGRES_USER: garden_user
+      POSTGRES_PASSWORD: garden_password
+    ports:
+      - "5432:5432"
+
+# Phase 2 — PostgreSQL + Docker
+# 2.11 ~
+
+# Run the containers in the background.
+# docker compose up -d
+
+# check:
+# docker compose ps
+
+# You're now inside PostgreSQL, not PowerShell.
+# docker exec -it garden-postgres psql -U garden_user -d garden_db
+
+
+
+## PostgreSQL
+# 
+# \dt
+
+# Exit PostgreSQL:
+# \q
+
+## Connect Django to PostgreSQL
+# python -m pip install psycopg
+
+# change (backend -> settings.py -> DATABASE)
+# python manage.py migrate
