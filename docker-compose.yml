@@ -10,7 +10,6 @@ services:
       - "5432:5432"
 
 # Phase 2 — PostgreSQL + Docker
-# 2.11 ~
 
 # Run the containers in the background.
 # docker compose up -d
@@ -35,3 +34,9 @@ services:
 
 # change (backend -> settings.py -> DATABASE)
 # python manage.py migrate
+
+
+
+
+# Delete the current GardenOps PostgreSQL data
+# docker compose down -v
