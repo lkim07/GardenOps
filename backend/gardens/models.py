@@ -347,6 +347,13 @@ class Plant(models.Model):
 #       ├── Due: Sept 15
 #       └── Status: Done
 
+# Garden
+#    │
+#    ├── Task
+#    │    ├── assignee → User
+#    │    └── plant → Plant
+#    │
+#    └── Plant
 
 class Task(models.Model):
     class Status(models.TextChoices):
