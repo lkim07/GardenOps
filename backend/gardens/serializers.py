@@ -51,6 +51,7 @@ class CommentSerializer(serializers.ModelSerializer):
             "created_at",
             "updated_at",
         ]
+        read_only_fields = ["task"]
 
 
 
@@ -80,6 +81,7 @@ class TaskSerializer(serializers.ModelSerializer):
         model = Task
         fields = [
             "id",
+            "garden",
             "title",
             "description",
             "assignee",
@@ -98,12 +100,13 @@ class TaskSerializer(serializers.ModelSerializer):
 
 
 # don't include garden,
-# because the Activity is already being displayed inside a particular Garden.
+# because the Activity is already being displayed inside a particular Garden. ---- ? added garden just in case
 class ActivitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Activity
         fields = [
             "id",
+            "garden",
             "user",
             "action",
             "description",
@@ -193,6 +196,55 @@ class GardenSerializer(serializers.ModelSerializer):
 
 
 
+
+
+
+# Phase 4 — Django REST Framework
+
+# 4.1  DRF setup                         ✅
+# 4.2  Serializers                       ✅
+# 4.3  First API view                    ✅
+# 4.4  URL routing                       ✅
+# 4.5  Garden list                       ✅
+# 4.6  Garden detail                     ✅
+# 4.7  Garden CRUD                       ✅
+# 4.8  Relationships                     ✅
+
+# 4.9.1  Plant API                     ✅
+# 4.9.2  Task CRUD API                 ✅
+# 4.9.3  Comment API                   ✅
+# 4.10.1 Activity Serializer          ✅
+# 4.10.2 Global Activity API           ✅
+# 4.10.3 Garden Activity API           ✅
+# 4.10.4 Activity ordering             ✅
+# 4.10.5 Activity testing              ← finish these tests
+
+# 4.11 Validation & permissions          ⏳
+# (
+# 4.11.1 Proper 404 handling
+# 4.11.2 Serializer validation
+# 4.11.3 ForeignKey validation
+# 4.11.4 HTTP status codes
+# 4.11.5 Garden membership permissions
+# 4.11.6 Owner / Member / Viewer rules
+# 4.11.7 Protecting API endpoints
+# 4.11.8 Permission testing
+# 4.11.9 Error-response consistency
+# )
+
+# 4.12 API testing & refactoring         ⏳
+# (
+# 4.12.1 API test structure
+# 4.12.2 Garden API tests
+# 4.12.3 Plant API tests
+# 4.12.4 Task API tests
+# 4.12.5 Comment API tests
+# 4.12.6 Activity API tests
+# 4.12.7 Error-case tests
+# 4.12.8 Relationship tests
+# 4.12.9 Refactor repeated API code
+# 4.12.10 Final Phase 4 verification
+# )
 
 
 

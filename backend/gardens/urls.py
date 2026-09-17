@@ -1,16 +1,31 @@
 from django.urls import path
 
-from .views import (garden_list, garden_detail, plant_list, plant_detail,task_list, )
+from .views import (garden_list, 
+                    garden_detail, 
+                    plant_list, 
+                    plant_detail, 
+                    task_list, 
+                    task_detail, 
+                    task_comment_list,
+                    activity_list, 
+                    garden_activity_list, )
 
 
 urlpatterns = [
     path("gardens/", garden_list, name="garden-list"),
     path("gardens/<int:garden_id>/", garden_detail, name="garden-detail"),
+    path("gardens/<int:garden_id>/activities/", garden_activity_list, name="garden-activity-list"),
     
     path("plants/", plant_list, name="plant-list"),
     path("plants/<int:plant_id>/", plant_detail, name="plant-detail"),
 
     path("tasks/", task_list, name="task-list"),
+    path("tasks/<int:task_id>/", task_detail, name="task-detail"),
+
+    path("tasks/<int:task_id>/comments/", task_comment_list, name="task-comment-list"),
+
+    path("activities/", activity_list, name="activity-list"),
+    
 ]
 
 # http://127.0.0.1:8000/api/gardens/
@@ -86,8 +101,22 @@ urlpatterns = [
 
 # Phase 4
 # DRF / REST APIs
+# (
+#     Phase 4
+# Django + DRF API foundation
+#         ↓
+# Phase 5
+# API testing / refactoring / documentation
+#         ↓
+# Phase 6
+# Authentication + Authorization
+#         ↓
+# JWT/session authentication
+#         ↓
+# Owner / Member / Viewer enforced at API level
+# )
 
-
+# /////
 # Phase 5
 # React + TypeScript
 

@@ -9,7 +9,6 @@ services:
     ports:
       - "5432:5432"
 
-# Phase 2 — PostgreSQL + Docker
 
 # Run the containers in the background.
 # docker compose up -d
